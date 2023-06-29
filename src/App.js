@@ -23,7 +23,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <Router basename="/">
+      <Router basename="/blog">
         <div className="App">
           <Route path="*" render={(props) => <Header {...props} />} />
           <Route exact path="/" render={() => <Content posts={this.state.posts} />} />
