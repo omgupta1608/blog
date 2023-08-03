@@ -32,6 +32,7 @@ a.btn {
 .navbar ul {
   margin: 0;
   padding: 0;
+  display: flex;
 }
 
 .navbar ul li {
@@ -218,6 +219,7 @@ a.btn {
   font-weight: 900;
   margin-bottom: 30px;
 }
+
 
 .single-post h1, .DraftEditor-editorContainer h1 {
   margin: 0;

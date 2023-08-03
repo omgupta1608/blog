@@ -8,7 +8,9 @@ export default ({match: {url}}) => {
     <header>
       <div className="navbar">
         <ul>
-          <li>{url === '/' ? <a href='https://omgupta1608.github.io' className='btn btn-new'>Back to main website</a> : <p></p>}</li>
+          <li><a href='https://omgupta1608.github.io' className='btn btn-new'>Back to main website</a></li> 
+          <li>{ url === "/" ? <Link to={"/til"} className='btn btn-new'>TIL</Link>: <Link to={"/"} className='btn btn-new'>Home</Link>}</li>
+          <li></li>
         </ul>
       </div>
     </header>

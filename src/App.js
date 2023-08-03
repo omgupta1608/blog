@@ -8,12 +8,14 @@ import Footer from './Components/Footer';
 
 import './App.css';
 import data from './data';
+import tils from './tils';
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: data
+      posts: data,
+      tils: tils
     }
   }
 
@@ -27,6 +29,7 @@ export default class App extends Component {
         <div className="App">
           <Route path="*" render={(props) => <Header {...props} />} />
           <Route exact path="/" render={() => <Content posts={this.state.posts} />} />
+          <Route exact path="/til" render={() => <Content posts={this.state.tils} />} />
           <Route exact path="/post/:id" render={(props) => <SinglePost {...props} posts={this.state.posts} handleWindow={this.handleWindow()} />} />
           <Footer/>
         </div>
