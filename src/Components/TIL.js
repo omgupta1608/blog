@@ -7,7 +7,7 @@ export default ({tils}) => {
     <div className="content-area">
       <div className="all-posts">
         {/* <Posts posts={tils} /> */}
-        <h1>WORK IN PROGRESS</h1>
+        <h2>Nothing here yet!</h2>
       </div>
     </div>
   )

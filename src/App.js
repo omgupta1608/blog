@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Content from './Components/Content';
 import SinglePost from './Components/SinglePost';
 import Footer from './Components/Footer';
+import TIL from './Components/TIL';
 
 import './App.css';
 import data from './data';
@@ -29,7 +30,7 @@ export default class App extends Component {
         <div className="App">
           <Route path="*" render={(props) => <Header {...props} />} />
           <Route exact path="/" render={() => <Content posts={this.state.posts} />} />
-          <Route exact path="/til" render={() => <Content posts={this.state.tils} />} />
+          <Route exact path="/til" render={() => <TIL tils={this.state.tils} />} />
           <Route exact path="/post/:id" render={(props) => <SinglePost {...props} posts={this.state.posts} handleWindow={this.handleWindow()} />} />
           <Footer/>
         </div>
