@@ -9,6 +9,7 @@ export default ({match: {url}}) => {
       <div className="navbar">
         <ul>
           <li><a href='https://omgupta1608.github.io' className='btn btn-new'>Back to main website</a></li> 
+          <li><a  className='btn btn-new' href='#subscribe'>Subscribe</a></li>
           {/* <li>{ url === "/" ? <Link to={"/til"} className='btn btn-new'>TIL (Things I Learn)</Link>: <Link to={"/"} className='btn btn-new'>Home</Link>}</li> */}
           <li></li>
         </ul>

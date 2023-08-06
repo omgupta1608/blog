@@ -14,7 +14,7 @@ export default ({post}) => {
         <li><Link to={`/post/${id}`} className="btn btn-more">Read More</Link></li>
       </ul>
       <br></br>
-      <div style={{height: "0.25px", backgroundColor: "#575757", width: "100%"}}></div>
+      <div style={{height: "0.25px", backgroundColor: "rgb(137, 137, 137)", width: "100%", marginTop: "8px"}}></div>
     </div>
   )
 }
