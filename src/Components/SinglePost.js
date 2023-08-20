@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import renderHTML from 'react-render-html';
+import data from '../data';
 
 export default ({match: {params: {id}}, history, posts}) => {
-  let post = posts.filter(post => post.id === id);
-  post = post[0];
+  const [post, setPost] = useState({
+    title: "",
+    body: ""
+  });
+  useEffect(() => {
+    setPost(data.reverse().filter(post => post.id === id)[0])
+  });
   
   return (
     <div className="single-post">

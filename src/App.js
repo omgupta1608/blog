@@ -15,9 +15,10 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: data,
+      posts: data.reverse(),
       tils: tils
     }
+    localStorage.setItem("posts", this.state.posts);
   }
 
   handleWindow() {
