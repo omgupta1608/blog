@@ -18,7 +18,7 @@ export default ({
     const s = new URLSearchParams(window.location.search);
     const blog_id = s.get("id");
     setBlogId(blog_id);
-    const post = data.reverse().filter((post) => post.id === blog_id)[0];
+    const post = data.filter((post) => post.id === blog_id)[0];
 
     setPost(post);
   });

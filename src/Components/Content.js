@@ -5,19 +5,20 @@ import data from "../data";
 
 import Posts from "./Posts";
 
-export default ({ posts }) => {
+export default () => {
   const [blog_id, setBlogId] = React.useState("");
   const [post, setPost] = useState({
     title: "",
     body: "",
   });
+  const [p, setp] = useState(data.slice().reverse())
 
   useEffect(() => {
-    data.reverse()
+    // data.reverse()
     const s = new URLSearchParams(window.location.search);
     const blog_id = s.get("id");
     setBlogId(blog_id);
-    const post = data.filter((post) => post.id === blog_id)[0];
+    const post = p.filter((post) => post.id === blog_id)[0];
 
     setPost(post);
   });
@@ -43,7 +44,7 @@ export default ({ posts }) => {
       ) : (
         <div className="content-area">
           <div className="all-posts">
-            <Posts posts={posts} />
+            <Posts posts={p} />
             {/* <h1>WORK IN PROGRESS</h1> */}
           </div>
         </div>
