@@ -15,7 +15,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: data.reverse(),
+      posts: data,
       tils: tils
     }
     localStorage.setItem("posts", this.state.posts);
@@ -31,8 +31,8 @@ export default class App extends Component {
         <div className="App">
           <Route path="*" render={(props) => <Header {...props} />} />
           <Route exact path="/" render={() => <Content posts={this.state.posts} />} />
-          <Route exact path="/til" render={() => <TIL tils={this.state.tils} />} />
-          <Route exact path="/post" render={(props) => <SinglePost {...props} posts={this.state.posts} handleWindow={this.handleWindow()} />} />
+          {/* <Route exact path="/til" render={() => <TIL tils={this.state.tils} />} /> */}
+          {/* <Route exact path="/post" render={(props) => <SinglePost {...props} posts={this.state.posts} handleWindow={this.handleWindow()} />} /> */}
           <Footer/>
         </div>
       </Router>
