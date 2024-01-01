@@ -11,7 +11,7 @@ export default () => {
     title: "",
     body: "",
   });
-  const [p, setp] = useState(data.slice().reverse())
+  const [p,] = useState(data.slice().reverse())
 
   useEffect(() => {
     // data.reverse()
@@ -23,9 +23,9 @@ export default () => {
     setPost(post);
   });
   return (
-    <div>
+    <React.Fragment>
       {blog_id ? (
-        <div>
+        <main>
           {/^[0-9a-f]{8}-[0-9a-f]{4}-[0-5][0-9a-f]{3}-[089ab][0-9a-f]{3}-[0-9a-f]{12}$/.test(
             blog_id
           ) && post ? (
@@ -40,15 +40,15 @@ export default () => {
               <h3>Invalid ID in URL</h3>
             </div>
           )}
-        </div>
+        </main>
       ) : (
-        <div className="content-area">
+        <main className="content-area">
           <div className="all-posts">
             <Posts posts={p} />
             {/* <h1>WORK IN PROGRESS</h1> */}
           </div>
-        </div>
+        </main>
       )}
-    </div>
+    </React.Fragment>
   );
 };

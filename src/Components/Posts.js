@@ -5,6 +5,10 @@ import Post from "./Post";
 const items = [
   { id: 1, name: "Tech/CS", category: "Tech/CS" },
   { id: 2, name: "Travel", category: "Travel" },
+  { id: 3, name: "Travel", category: "Travel" },
+  { id: 4, name: "Travel", category: "Travel" },
+  { id: 5, name: "Travel", category: "Travel" },
+  { id: 6, name: "Travel", category: "Travel" },
 ];
 
 export default ({ posts }) => {
@@ -30,30 +34,34 @@ export default ({ posts }) => {
   }, [tagFilter]);
 
   return (
-    <div>
+    <React.Fragment>
       <div id="filter-bar">
-      <label>
-        <input
-          type="radio"
-          name="filter"
-          value="all"
-          onChange={() => setTagFilter('All')}
-          defaultChecked
-        /> All
-      </label>
-        {items.map((category) => (
-          <label key={category.id}>
+        <div className="filter-chips-wrapper">
+          <label>
             <input
+              className="filter-radio-btn"
               type="radio"
               name="filter"
-              value={category.category}
-              onChange={() => setTagFilter(category.category)}
-            />{" "}
-            {category.name}
+              value="all"
+              onChange={() => setTagFilter('All')}
+              defaultChecked
+            /> <span className="filter-chip">All</span>
           </label>
-        ))}
+          {items.map((category) => (
+            <label key={category.id}>
+              <input
+                className="filter-radio-btn"
+                type="radio"
+                name="filter"
+                value={category.category}
+                onChange={() => setTagFilter(category.category)}
+              />{" "}
+              <span className="filter-chip">{category.name}</span>
+            </label>
+          ))}
+        </div>
       </div>
       <div>{showPost}</div>
-    </div>
+    </React.Fragment>
   );
 };
