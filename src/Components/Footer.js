@@ -56,7 +56,7 @@ export default () => {
           <div style={{ padding: "10px" }}>
             {/* <label><strong>Name</strong></label> */}
             <input
-              style={{ padding: "10px" }}
+              style={{ padding: "10px", width: '100%' }}
               onChange={(e) => updateInput(e)}
               placeholder="Enter your name"
               name="name"
@@ -66,7 +66,7 @@ export default () => {
           <div style={{ padding: "10px" }}>
             {/* <label><strong>Email</strong></label> */}
             <input
-              style={{ padding: "10px" }}
+              style={{ padding: "10px", width: '100%' }}
               placeholder="Enter your email"
               name="email"
               onChange={(e) => updateInput(e)}
