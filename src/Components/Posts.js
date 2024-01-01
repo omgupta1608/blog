@@ -5,10 +5,6 @@ import Post from "./Post";
 const items = [
   { id: 1, name: "Tech/CS", category: "Tech/CS" },
   { id: 2, name: "Travel", category: "Travel" },
-  { id: 3, name: "Travel", category: "Travel" },
-  { id: 4, name: "Travel", category: "Travel" },
-  { id: 5, name: "Travel", category: "Travel" },
-  { id: 6, name: "Travel", category: "Travel" },
 ];
 
 export default ({ posts }) => {
