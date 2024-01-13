@@ -13,7 +13,7 @@ export default ({ posts }) => {
   const [showPost, setShowPost] = React.useState(
     posts.map((post) => {
       if (tagFilter == "All") {
-         if (post['topic'] !== "ML Series") return <Post key={post.id} post={post} />;
+        return <Post key={post.id} post={post} />;
       } else if (post["topic"] == tagFilter)
         return <Post key={post.id} post={post} />;
     })
@@ -22,7 +22,7 @@ export default ({ posts }) => {
   React.useEffect(() => {
     const newShowPost = posts.map((post) => {
       if (tagFilter == "All") {
-        if (post['topic'] !== "ML Series") return <Post key={post.id} post={post} />;
+        return <Post key={post.id} post={post} />;
       } else if (post["topic"] == tagFilter)
         return <Post key={post.id} post={post} />;
     });
