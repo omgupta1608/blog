@@ -21,6 +21,10 @@ export default () => {
     const post = p.filter((post) => post.id === blog_id)[0];
 
     setPost(post);
+    var title = "Om's Blog"
+    if (post) title = post['title'] + " | " + title;
+    
+    document.title = title
   });
   return (
     <React.Fragment>
