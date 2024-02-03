@@ -1,18 +1,31 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import toast, { toastConfig } from "react-simple-toasts";
 toastConfig({
   theme: "frosted-glass",
 });
-
+const defaultSubCountString = "Subscribe to my blog!"
 export default () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-
+  const [sub_count, setSubCount] = useState(defaultSubCountString);
   function updateInput(e) {
     if (e.target.name === "name") setName(e.target.value);
     else if (e.target.name === "email") setEmail(e.target.value);
   }
+
+  useEffect(() => {
+    axios.get(
+      "https://d1ecg5oq6sy2u0.cloudfront.net/api/blog/get-sub-count",
+      
+    ).then(data => {
+      const c = data.data['sub_count']
+      if (c) setSubCount(`Subscribe to my blog and join ${c} other subscribers!`)
+      else setSubCount(defaultSubCountString)
+    }).catch(err => {
+      setSubCount(defaultSubCountString)
+    })
+  }, [])
 
   async function subscribe() {
     try {
@@ -52,6 +65,9 @@ export default () => {
   return (
     <footer>
       <div className="footer">
+        <div className="sub-heading">
+          {sub_count}
+        </div>
         <div id="subscribe" className="subscribe-form">
           <div style={{ padding: "10px" }}>
             {/* <label><strong>Name</strong></label> */}
