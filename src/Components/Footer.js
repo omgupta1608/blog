@@ -100,7 +100,7 @@ export default () => {
           <li>
             Made with 🧡 By{" "}
             <a
-              href="https://omgupta1608.github.io"
+              href="https://om-gupta.me"
               rel="noopener noreferrer"
               target="_blank"
             >

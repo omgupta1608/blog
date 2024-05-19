@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import renderHTML from "react-render-html";
 import data from "../data";
-
+import { ReactCusdis } from "react-cusdis";
 import Posts from "./Posts";
 
 export default () => {
@@ -38,19 +38,19 @@ export default () => {
 
               {renderHTML(post.body)}
               <ul className="post-foot"></ul>
-              <div
-                id="cusdis_thread"
-                data-host="https://cusdis.com"
-                data-app-id="963b5312-5446-43db-8b16-1793ce93b98d"
-                data-page-id={blog_id}
-                data-page-url={window.location.href}
-                data-page-title={post.title}
-              ></div>
-              <script
-                async
-                defer
-                src="https://cusdis.com/js/cusdis.es.js"
-              ></script>
+              <div>
+                <h4 style={{margin: "30px 0;"}}>Feel free to add a comment (subject to approval)</h4>
+                <ReactCusdis
+                  attrs={{
+                    host: "https://cusdis.com",
+                    appId: "963b5312-5446-43db-8b16-1793ce93b98d",
+                    pageId: blog_id,
+                    pageTitle: post.title,
+                    pageUrl: window.location.href,
+                    theme: "light"
+                  }}
+                />
+              </div>
             </div>
           ) : (
             <div>
