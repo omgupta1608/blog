@@ -1,7 +1,11 @@
 {
-  "main.css": "static/css/main.8adaa63f.css",
-  "main.css.map": "static/css/main.8adaa63f.css.map",
-  "main.js": "static/js/main.4664c60f.js",
-  "main.js.map": "static/js/main.4664c60f.js.map",
-  "static/media/logo.svg": "static/media/logo.5d5d9eef.svg"
+  "main.css": "/blog/static/css/main.18f53855.chunk.css",
+  "main.js": "/blog/static/js/main.341100dc.chunk.js",
+  "main.js.map": "/blog/static/js/main.341100dc.chunk.js.map",
+  "static/js/1.4e6709ff.chunk.js": "/blog/static/js/1.4e6709ff.chunk.js",
+  "static/js/1.4e6709ff.chunk.js.map": "/blog/static/js/1.4e6709ff.chunk.js.map",
+  "runtime~main.js": "/blog/static/js/runtime~main.255cd0f7.js",
+  "runtime~main.js.map": "/blog/static/js/runtime~main.255cd0f7.js.map",
+  "static/media/logo.svg": "/blog/static/media/logo.5d5d9eef.svg",
+  "index.html": "/blog/index.html"
 }
