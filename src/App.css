@@ -95,7 +95,6 @@ a.btn {
   /* padding: 0 25px; */
 }
 
-
 .post a {
   color: #000;
   text-decoration: none;
@@ -253,37 +252,44 @@ em {
   font-size: 42px;
   font-weight: 900;
   margin-bottom: 30px;
+  color: #fff;
 }
 
 .single-post h1,
 .DraftEditor-editorContainer h1 {
   margin: 0;
   font-size: 38px;
+  color: #fff;
 }
 
 .single-post h2,
 .DraftEditor-editorContainer h2 {
   font-size: 34px;
+  color: #fff;
 }
 
 .single-post h3,
 .DraftEditor-editorContainer h3 {
   font-size: 30px;
+  color: #fff;
 }
 
 .single-post h4,
 .DraftEditor-editorContainer h4 {
   font-size: 26px;
+  color: #fff;
 }
 
 .single-post h5,
 .DraftEditor-editorContainer h5 {
   font-size: 22px;
+  color: #fff;
 }
 
 .single-post h6,
 .DraftEditor-editorContainer h6 {
   font-size: 18px;
+  color: #fff;
 }
 
 .single-post ul li,
@@ -292,12 +298,14 @@ em {
 .DraftEditor-editorContainer ol li {
   padding: 12px 0;
   font-size: 21px;
+  color: #fff;
 }
 
 .single-post a,
 .DraftEditor-editorContainer a {
   color: #fff;
   text-decoration: underline;
+  color: #fff;
 }
 
 .single-post p,
@@ -305,6 +313,7 @@ em {
   margin: 0;
   font-size: 22px;
   line-height: 1.7;
+  color: #fff;
 }
 
 .single-post p code,
@@ -312,12 +321,14 @@ em {
   background-color: rgba(0, 0, 0, 0.05);
   padding: 3px 5px;
   font-size: 0.8em;
+  color: #fff;
 }
 
 .single-post figure,
 .DraftEditor-editorContainer figure {
   margin: 30px auto;
   text-align: center;
+  color: #fff;
 }
 
 .single-post blockquote,
@@ -326,6 +337,7 @@ em {
   margin: 0;
   padding: 10px 25px;
   font-style: italic;
+  color: #fff;
 }
 
 .single-post pre,
@@ -333,12 +345,14 @@ em {
   background-color: rgba(0, 0, 0, 0.05);
   padding: 20px;
   white-space: pre-wrap;
+  color: #fff;
 }
 
 .single-post pre code,
 .DraftEditor-editorContainer pre code {
   font-size: 17px;
   color: rgba(0, 0, 0.75);
+  color: #fff;
 }
 
 .post-foot {
@@ -488,9 +502,10 @@ footer {
 }
 .ml {
   border: 1px solid rgba(76, 0, 255, 0.838);
-  background-color:  rgba(36, 7, 180, 0.1);
+  background-color: rgba(36, 7, 180, 0.1);
   gap: 5px;
   padding: 5px 16px 5px 10px;
+  text-wrap: nowrap;
 }
 .filter-chip:hover {
   background-color: rgba(108, 51, 51, 0.1);
@@ -527,6 +542,14 @@ footer {
 .filter-chips-wrapper > label {
   /* display: block; */
   max-width: fit-content;
+}
+
+.dark {
+  background-color: #000;
+}
+
+#cusdis_thread {
+  background-color: #000;
 }
 
 @media screen and (max-width: 600px) {
