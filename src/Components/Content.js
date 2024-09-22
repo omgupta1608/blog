@@ -39,7 +39,7 @@ export default () => {
               {renderHTML(post.body)}
               <ul className="post-foot"></ul>
               <div>
-                <h4 style={{margin: "30px 0;"}}>Feel free to add a comment (subject to approval)</h4>
+                <h4 style={{margin: "30px 0;", color:"#fff"}}>Feel free to add a comment (subject to approval)</h4>
                 <ReactCusdis
                   attrs={{
                     host: "https://cusdis.com",
@@ -47,7 +47,7 @@ export default () => {
                     pageId: blog_id,
                     pageTitle: post.title,
                     pageUrl: window.location.href,
-                    theme: "light"
+                    theme: "auto",
                   }}
                 />
               </div>

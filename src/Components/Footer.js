@@ -97,10 +97,10 @@ export default () => {
         </div>
 
         <ul>
-          <li>
+          <li style={{color: "#fff"}}>
             Made with 🧡 By{" "}
             <a
-              href="https://om-gupta.me"
+              href="https://omgupta1608.github.io"
               rel="noopener noreferrer"
               target="_blank"
             >
