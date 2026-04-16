@@ -94,7 +94,7 @@ function Footer() {
   return (
     <footer className="mt-24 border-t border-stone-200 dark:border-stone-800 py-10">
       <div className="max-w-3xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-stone-400 dark:text-stone-500">
-        <span className="font-serif italic">Written with care, published with intent.</span>
+        <span className="font-serif italic">Written with love</span>
         <span>© {new Date().getFullYear()} · All rights reserved</span>
       </div>
     </footer>
