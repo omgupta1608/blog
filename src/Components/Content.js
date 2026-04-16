@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import renderHTML from "react-render-html";
 import data from "../data";
-import { ReactCusdis } from "react-cusdis";
+// import { ReactCusdis } from "react-cusdis";
 import Posts from "./Posts";
 
 export default () => {
@@ -38,7 +38,7 @@ export default () => {
 
               {renderHTML(post.body)}
               <ul className="post-foot"></ul>
-              <div>
+              {/* <div>
                 <h4 style={{margin: "30px 0;", color:"#fff"}}>Feel free to add a comment (subject to approval)</h4>
                 <ReactCusdis
                   attrs={{
@@ -50,7 +50,7 @@ export default () => {
                     theme: "auto",
                   }}
                 />
-              </div>
+              </div> */}
             </div>
           ) : (
             <div>
