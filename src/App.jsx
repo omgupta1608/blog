@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useNavigate, useParams, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useNavigate, useParams, Link, useLocation, useSearchParams } from 'react-router-dom'
 import { getAllBlogs, saveLocalBlog } from './data/blogs.js'
 // import EditorPage from './EditorPage.js'
 
@@ -67,7 +67,7 @@ function Navbar({ showBack }) {
         <div className="flex items-center gap-3">
           {showBack && (
             <button
-              onClick={() => navigate(-1)}
+              onClick={() => navigate('/')}
               className="p-2 -ml-2 rounded-lg text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all"
             >
               <ArrowLeft />
@@ -112,7 +112,7 @@ function BlogCard({ blog, index }) {
 
   return (
     <article
-      onClick={() => navigate(`/${blog.id}`)}
+      onClick={() => navigate(`?id=${blog.id}`)}
       className={`fade-up ${delay} group cursor-pointer py-8 border-b border-stone-100 dark:border-stone-800/60 hover:bg-stone-50 dark:hover:bg-stone-900/40 -mx-4 px-4 rounded-lg transition-all duration-200`}
     >
       <div className="flex items-center gap-3 mb-3">
@@ -139,9 +139,14 @@ const PAGE_SIZE = 10
 
 function HomePage() {
   const [blogs] = useState(() => getAllBlogs())
-  
+   const [searchParams] = useSearchParams();
+  const id = searchParams.get("id");
   const [topic, setTopic] = useState('All')
   const [page, setPage] = useState(1)
+
+  if (id) {
+    return <BlogPage  ></BlogPage>
+  }
 
   const topics = ['All', ...Array.from(new Set(blogs.map(b => b.topic))).sort()]
 
@@ -225,10 +230,13 @@ function HomePage() {
 
 // ─── Blog Detail Page ─────────────────────────────────────────────────────────
 function BlogPage() {
-  const { id } = useParams()
+ const [searchParams] = useSearchParams()
+  const id = searchParams.get("id") 
+
   const [blogs] = useState(() => getAllBlogs())
   const [progress, setProgress] = useState(0)
-  const blog = blogs.find(b => b.id === id)
+
+  const blog = blogs.find(b => String(b.id) === String(id))
 
   useEffect(() => {
     const onScroll = () => {
@@ -280,9 +288,9 @@ function BlogPage() {
         />
 
         {/* End marker */}
-        <div className="mt-16 mb-4 flex items-center gap-4">
+         <div className="fade-up fade-up-delay-1 mb-10 flex items-center gap-4">
           <div className="h-px flex-1 bg-stone-200 dark:bg-stone-800" />
-          <span className="font-serif italic text-sm text-stone-400">fin.</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-amber-500" />
           <div className="h-px flex-1 bg-stone-200 dark:bg-stone-800" />
         </div>
       </main>
@@ -299,7 +307,7 @@ export default function App() {
         <BrowserRouter basename="/blog">
           <Routes>
             <Route path="" element={<HomePage />} />
-            <Route path="/:id" element={<BlogPage />} />
+            {/* <Route path="/:id" element={<BlogPage />} /> */}
             {/* <Route path="/atelier-secret" element={<EditorPage />} /> */}
           </Routes>
         </BrowserRouter>
